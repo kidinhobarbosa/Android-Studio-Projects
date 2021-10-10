@@ -1,0 +1,85 @@
+package com.example.pedrapapeltesoura;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        }
+
+
+
+            public void selecionadoPedra(View view){this.opcaoSelecionada(0);
+            }
+
+            public void selecionadoPapel(View view){
+        this.opcaoSelecionada(1);
+            }
+
+            public void selecionadoTesoura(View view) {
+                this.opcaoSelecionada(2);
+            }
+
+            public void opcaoSelecionada(int opcaoSelecionada) {
+
+                ImageView imagemResultado = findViewById(R.id.imageResultado);
+                TextView texto = findViewById(R.id.textView2);
+
+                int numero = new Random().nextInt(3);
+                int[] opcoes = {0, 1, 2};
+                int opcaoApp = opcoes[numero];
+
+                switch (opcaoApp) {
+                    case 0:
+                        imagemResultado.setImageResource(R.drawable.pedra);
+                        break;
+                    case 1:
+                        imagemResultado.setImageResource(R.drawable.papel);
+                        break;
+                    case 2:
+                        imagemResultado.setImageResource(R.drawable.tesoura);
+                        break;
+
+                }
+                if (opcaoApp == 0 && opcaoSelecionada == 2 ||
+                             opcaoApp == 1 && opcaoSelecionada == 0 ||
+                                opcaoApp == 2 && opcaoSelecionada == 1) {
+                    texto.setText("Você perdeu :(");}
+
+                        else if (opcaoApp == 2 && opcaoSelecionada == 0 ||
+                        opcaoApp == 0  && opcaoSelecionada == 1||
+                        opcaoApp == 1 && opcaoSelecionada == 2){
+                            texto.setText("Você venceu!");}
+
+                        else
+
+                        texto.setText("Vocês empataram");
+                }
+
+
+
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
