@@ -1,0 +1,32 @@
+package com.example.frasedodia;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+
+import java.util.Random;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void alterarFrase(View View) {
+
+        String[] frases = {
+               "Quem com ferro fere, tanto bate até que fura",
+                "Tudo demais é muito",
+                " Pior é na guerra, que morre e não se enterra",
+                "Para um bom espremedor, meia laranja basta"
+        };
+
+        TextView texto = findViewById(R.id.textoExibição);
+        int numero = new Random().nextInt(4);
+        texto.setText(frases[numero]);
+    }
+}
