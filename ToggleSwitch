@@ -1,0 +1,58 @@
+package com.example.toggleswitch;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
+public class MainActivity extends AppCompatActivity {
+
+    private ToggleButton tSenha;
+    private Switch sSenha;
+    private TextView resultado;
+    private CheckBox checar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        tSenha = findViewById(R.id.toggleSenha);
+        sSenha = findViewById(R.id.switchSenha);
+        resultado = findViewById(R.id.textResultado);
+        checar = findViewById(R.id.checkBox1);
+        ouvinte();
+
+    }
+
+        public void ouvinte(){
+
+            sSenha.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if ( b ) {
+                        resultado.setText("Ligado");
+                    } else {
+                        resultado.setText("Desligado");
+                    }
+                }
+            });
+        }
+
+
+
+    public void enviar(View View){
+
+        if (checar.isChecked()){
+            resultado.setText("Ligado");
+        }else resultado.setText("Desligado");
+    }
+
+
+
+}
