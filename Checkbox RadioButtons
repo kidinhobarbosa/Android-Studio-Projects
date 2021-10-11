@@ -1,0 +1,130 @@
+package com.example.componentesbasicos;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.os.Bundle;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+
+import com.google.android.material.textfield.TextInputEditText;
+
+public class MainActivity extends AppCompatActivity {
+
+    private EditText campoNome;
+    private TextInputEditText campoEmail;
+    private TextView textoResultado;
+    private CheckBox caixaum, caixadois, caixatres;
+    private RadioButton botaoum, botaodois, botaotres;
+    private RadioGroup opcaoSexo;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        campoNome = findViewById(R.id.editNome);
+        campoEmail = findViewById(R.id.editEmail);
+        textoResultado = findViewById(R.id.resultado);
+        caixaum = findViewById(R.id.checkBox);
+        caixadois = findViewById(R.id.checkBox2);
+        caixatres = findViewById(R.id.checkBox3);
+        botaoum = findViewById(R.id.radioButton);
+        botaodois = findViewById(R.id.radioButton2);
+        botaotres = findViewById(R.id.radioButton3);
+        opcaoSexo = findViewById(R.id.rgsexo);
+        radiobutton();
+
+
+    }
+
+    String texto = "";
+
+    public void radiobutton() {
+
+        opcaoSexo.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.radioButton) ;
+                {
+                    textoResultado.setText("Masculino");
+                }
+                if (i == R.id.radioButton2) {
+
+                    textoResultado.setText("Feminino");
+                } else textoResultado.setText("Outro");
+            }
+        });
+
+
+//        if (botaoum.isChecked()) {
+//            texto = botaoum.getText().toString();
+//        }
+//
+//        if (botaodois.isChecked()){
+//            texto = botaodois.getText().toString();
+//        }
+//        if (botaotres.isChecked()) {
+//            texto = botaotres.getText().toString();
+//        }
+//        textoResultado.setText(texto);
+
+
+    }
+
+
+    public void enviar(View view) {
+
+//
+
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//        checkbox();
+
+
+//        String email = campoEmail.getText().toString();
+//        String nome = campoNome.getText().toString();
+//
+//        textoResultado.setText("nome: " + nome + "email: " + email);
+
+
+//    public void limpar(View view){
+//
+//        campoNome.setText("");
+//        campoEmail.setText("");
+//
+//        public void checkbox() {
+//
+//                String texto = "";
+//                if (caixaum.isChecked()) {
+//                    texto = "verde selecionado";
+////            String corSelecionada = caixaum.getText().toString();
+////            texto = corSelecionada;
+//                }
+//
+//                if (caixadois.isChecked()) {
+//                    texto = texto + " branco selecionado ";
+//                }
+//                if (caixatres.isChecked()) {
+//                    texto = texto + " vermelho selecionado ";
+//                }
+//            }
+
+
