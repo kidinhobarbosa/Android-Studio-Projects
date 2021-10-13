@@ -22,10 +22,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+                Usuário usuário = new Usuário("Jamilto", "jamilton@hotmail.com");
+
 
                 Intent intent = new Intent(getApplicationContext(), SegundaActivity.class);
                 intent.putExtra("nome", "Jamilton");
                 intent.putExtra("idade", 30);
+                intent.putExtra("objeto", usuário);
                 startActivity(intent);
 
             }
